@@ -9,5 +9,11 @@ export default defineConfig({
   },
   define: {
     'process.env': {}
+  },
+  optimizeDeps: {
+    exclude: ['@rollup/rollup-linux-x64-gnu']  // 👈 importante
+  },
+  build: {
+    target: 'esnext'
   }
 });
