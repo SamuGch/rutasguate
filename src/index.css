@@ -342,6 +342,10 @@ button:hover {
   .app-container {
     padding: 1rem;
     font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .app-container.dark h1{
     text-align: center;
   }
 
