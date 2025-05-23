@@ -1,0 +1,371 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --dark-bg: #121212;
+  --dark-text: #e0e0e0;
+  --dark-secondary-bg: #1e1e1e;
+  --dark-accent: #e74c3c;
+}
+
+.logo {
+  width: 300px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: #1d1d29;
+  padding: 1rem;
+}
+
+.app-container {
+  max-width: clamp(320px, 90%, 1200px);
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem);
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Tema oscuro */
+.app-container.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+  box-shadow: none;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* En modo oscuro los títulos tienen color claro */
+.app-container.dark h1,
+.app-container.dark h2,
+.app-container.dark h3 {
+  color: var(--light-color);
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #0c04f452;
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}
+
+.nav-tabs button {
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.nav-tabs button:hover {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  border-radius: 10px;
+}
+
+.nav-tabs button.active {
+  background-color: var(--dark-color);
+  color: white;
+  border-radius: 10px;
+}
+
+.nav-tabs button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-radius: 10px;
+}
+
+/* Ajustes para tema oscuro */
+.app-container.dark .nav-tabs button {
+  background: var(--dark-secondary-bg);
+  border: 1px solid var(--dark-secondary-bg);
+  color: var(--dark-text);
+}
+
+.app-container.dark .nav-tabs button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.app-container.dark .nav-tabs button.active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+}
+
+.tab-content {
+  margin-top: 1rem;
+}
+
+.input-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.input-section {
+  padding: 1.5rem;
+  background-color: var(--light-color);
+  border-radius: 8px;
+}
+
+/* En modo oscuro fondo de secciones de entrada */
+.app-container.dark .input-section {
+  background-color: var(--dark-secondary-bg);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--dark-color);
+}
+
+/* Etiquetas en modo oscuro */
+.app-container.dark .form-group label {
+  color: var(--light-color);
+}
+
+.form-group select,
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  color: var(--dark-color);
+}
+
+/* Inputs en modo oscuro */
+.app-container.dark .form-group select,
+.app-container.dark .form-group input[type="file"] {
+  background-color: #333;
+  border: 1px solid #555;
+  color: var(--light-color);
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+}
+
+/* Botones en modo oscuro */
+.app-container.dark button {
+  background-color: var(--dark-secondary-bg);
+  color: var(--light-color);
+  border: 1px solid var(--light-color);
+}
+
+.app-container.dark button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.error {
+  color: var(--accent-color);
+  margin-top: 0.5rem;
+}
+
+.map-container {
+  margin-top: 1rem;
+}
+
+.error-details {
+  background-color: #ffebee;
+  border-left: 4px solid #f44336;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* En modo oscuro, errores con fondo oscuro */
+.app-container.dark .error-details {
+  background-color: #4f1c1c;
+  border-left: 4px solid #e74c3c;
+  color: #f8d7da;
+}
+
+.error-details h3 {
+  color: #d32f2f;
+  margin-top: 0;
+}
+
+/* En modo oscuro, títulos de error */
+.app-container.dark .error-details h3 {
+  color: #f44336;
+}
+
+.debug-info {
+  background-color: #f5f5f5;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+/* Debug info en modo oscuro */
+.app-container.dark .debug-info {
+  background-color: #2a2a2a;
+  color: var(--light-color);
+}
+
+.loading {
+  padding: 2rem;
+  text-align: center;
+  background-color: #e3f2fd;
+}
+
+/* Loading modo oscuro */
+.app-container.dark .loading {
+  background-color: #203040;
+  color: var(--light-color);
+}
+
+.route-info {
+  background-color: #e8f5e9;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+.app-container.dark .route-info {
+  background-color: #2b3a2b;
+  color: var(--light-color);
+}
+
+.route-info p {
+  margin: 0.5rem 0;
+}
+
+.details-container {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.details-section {
+  padding: 1rem;
+  background-color: var(--light-color);
+  border-radius: 8px;
+}
+
+.app-container.dark .details-section {
+  background-color: var(--dark-secondary-bg);
+}
+
+.details-section ul {
+  padding-left: 1.5rem;
+}
+
+.exit-section {
+  text-align: center;
+  padding: 2rem;
+}
+
+.exit-section button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* En modo oscuro botón de salida */
+.app-container.dark .exit-section button {
+  background-color: var(--dark-secondary-bg);
+  color: var(--light-color);
+  border: 1px solid var(--light-color);
+}
+
+.app-container.dark .exit-section button:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* estilos seleccion de ruta mas corta*/
+.routes-selector {
+  margin-bottom: 20px;
+}
+
+.routes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.route-option {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.route-option:hover {
+  background-color: #f5f5f5;
+}
+
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .nav-tabs {
+    flex-direction: column;
+  }
+  .input-options {
+    grid-template-columns: 1fr;
+  }
+  .input-section {
+    padding: 0.2rem;
+  }
+  .input-section label {
+    font-size: 1rem;
+  }
+  .form-group {
+    margin-bottom: 1.0rem;
+  }
+  .form-group label {
+    font-size: 1rem;
+  }
+  
+  .nav-tabs {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
